@@ -88,7 +88,7 @@ class Manage extends MY_Controller {
 
 	public function index()
 	{
-		$this->load->view('manage/index.php');
+		$this->load->view('manage/Index.php');
 	}
 
 	/**

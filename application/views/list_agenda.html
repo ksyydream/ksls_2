@@ -24,22 +24,28 @@
                     {{if $permission_id < 5 || in_array(2,$position_id) || in_array(8,$position_id) || in_array(9,$position_id)}}
                     <li><a href="/agenda/list_agenda_other"><em class="allagenda"></em>代办事项</a></li>
                     {{/if}}
+                    <li><a href="/agenda/list_agenda_other"><em class="em1 verifying"></em>审核中</a></li>
+                    <li><a href="/agenda/list_agenda_other"><em class="em1 loanverify"></em>贷款预审中</a></li>
+                    <li><a href="/agenda/list_agenda_other"><em class="em1 onlinesign"></em>网签中</a></li>
+                    <li><a href="/agenda/list_agenda_other"><em class="em1 ordertransfer"></em>预约过户中</a></li>
+                    <li><a href="/agenda/list_agenda_other"><em class="em1 cometotestify"></em>等待出证</a></li>
+                    <li><a href="/agenda/list_agenda_other"><em class="em1 makeloans"></em>等待放款</a></li>
                 </ul>
             </div>
         </div>
         <div class="wrap-right">
             <div class="search-wrap">
                 <form id="formSearchActivity" method="POST" action="/agenda/list_agenda">
-                    <select name="course" id="sel_course">
-                        <option value="">进程选择</option>
-                        {{foreach from=$course_list item=doo}}
-                        {{if $doo['id']==$course}}
-                        <option value="{{$doo['id']}}" selected>{{$doo['name']}}</option>
-                        {{else}}
-                        <option value="{{$doo['id']}}">{{$doo['name']}}</option>
-                        {{/if}}
-                        {{/foreach}}
-                    </select>
+                    <!--<select name="course" id="sel_course">-->
+                        <!--<option value="">进程选择</option>-->
+                        <!--{{foreach from=$course_list item=doo}}-->
+                        <!--{{if $doo['id']==$course}}-->
+                        <!--<option value="{{$doo['id']}}" selected>{{$doo['name']}}</option>-->
+                        <!--{{else}}-->
+                        <!--<option value="{{$doo['id']}}">{{$doo['name']}}</option>-->
+                        <!--{{/if}}-->
+                        <!--{{/foreach}}-->
+                    <!--</select>-->
                     <select name="status" id="sel_status">
                         <option value="">选择状态</option>
                         <option value="1">正常</option>

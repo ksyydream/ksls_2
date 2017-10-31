@@ -88,11 +88,12 @@ body{background: #fff; font-family: "Microsoft YaHei";}p{white-space: normal; wo
 .nav-left{ background: #2a3542;}
 .schedule-wrap{padding-bottom: 20px; background: #f2f2f0;min-height:540px;}
 .nav-left-ul{padding:18px 10px;margin:0;}
-.nav-left-ul li{width:110px; background: #35404d;margin-bottom:12px; border-radius: 2px; font-size: 14px;}
+.nav-left-ul li{width:110px; background: #35404d;margin-bottom:5px; border-radius: 2px; font-size: 14px;}
 .nav-left-ul li a{ color:#aeb2b7;font-weight:bold; width:110px; height:42px;line-height: 42px;  display: block;}
 .nav-left-ul li a:hover{ color:#fff; text-decoration: none;}
-.nav-left-ul li em{margin:10px 2px 10px 10px;float:left;height:25px; width:25px; background: url(../images/left_nav.png) no-repeat;
+.nav-left-ul li em{margin:10px 2px 10px 5px;float:left;height:25px; width:25px; background: url(../images/left_nav.png) no-repeat;
 }
+.nav-left-ul li .em1{background-image: url(../images/left_nav_01.png);}
 .nav-left-ul li .home{ background-position:0 2px; }
 .nav-left-ul li .schedule{ background-position:0 -28px; }
 .nav-left-ul li .verify{ background-position:0 -56px; }
@@ -112,6 +113,55 @@ body{background: #fff; font-family: "Microsoft YaHei";}p{white-space: normal; wo
 .nav-left-ul li .rechargelist{background-position:0 -450px;}
 .nav-left-ul li .cpaccount{background-position:0 -473px;}
 .nav-left-ul li .finance{background-position:0 -497px;}
+
+
+.nav-left-ul li .financem{ background-image: url(../images/left_nav_02.png);}
+.nav-left-ul li .financeservice{background-position:0 4px;}
+.nav-left-ul li .financewtj{background-position:0 -17px;}
+.nav-left-ul li .financedsp{background-position:0 -40px;}
+.nav-left-ul li .financetg{background-position:0 -65px;}
+.nav-left-ul li .financewtg{background-position:0 -89px;}
+.nav-left-ul li .financejan{background-position:0 -110px;}
+.nav-left-ul li .financezh{background-position:0 -131px;}
+
+.nav-left-ul li .verifying{background-position:0 3px;}
+.nav-left-ul li .loanverify{background-position:0 -23px;}
+.nav-left-ul li .onlinesign{background-position:0 -45px;}
+.nav-left-ul li .ordertransfer{background-position:0 -66px;}
+.nav-left-ul li .cometotestify{background-position:0 -90px;}
+.nav-left-ul li .makeloans{background-position:0 -111px;}
+
+.nav-left-ul li.on .verifying{background-position:-25px 3px;}
+.nav-left-ul li.on .loanverify{background-position:-25px -23px;}
+.nav-left-ul li.on .onlinesign{background-position:-25px -45px;}
+.nav-left-ul li.on .ordertransfer{background-position:-25px -66px;}
+.nav-left-ul li.on .cometotestify{background-position:-26px -90px;}
+.nav-left-ul li.on .makeloans{background-position:-25px -111px;}
+
+
+.nav-left-ul li.on .financeservice{background-position:-27px 4px;}
+.nav-left-ul li.on .financewtj{background-position:-26px -17px;}
+.nav-left-ul li.on .financedsp{background-position:-26px -40px;}
+.nav-left-ul li.on .financetg{background-position:-26px -65px;}
+.nav-left-ul li.on .financewtg{background-position:-26px -89px;}
+.nav-left-ul li.on .financejan{background-position:-26px -110px;}
+.nav-left-ul li.on .financezh{background-position:-26px -131px;}
+
+
+.nav-left-ul li a:hover .verifying{background-position:-25px 3px;}
+.nav-left-ul li a:hover .loanverify{background-position:-25px -23px;}
+.nav-left-ul li a:hover .onlinesign{background-position:-25px -45px;}
+.nav-left-ul li a:hover .ordertransfer{background-position:-25px -66px;}
+.nav-left-ul li a:hover .cometotestify{background-position:-26px -90px;}
+.nav-left-ul li a:hover .makeloans{background-position:-25px -111px;}
+
+.nav-left-ul li a:hover .financeservice{background-position:-27px 4px;}
+.nav-left-ul li a:hover .financewtj{background-position:-26px -17px;}
+.nav-left-ul li a:hover .financedsp{background-position:-26px -40px;}
+.nav-left-ul li a:hover .financetg{background-position:-26px -65px;}
+.nav-left-ul li a:hover .financewtg{background-position:-26px -89px;}
+.nav-left-ul li a:hover .financejan{background-position:-26px -110px;}
+.nav-left-ul li a:hover .financezh{background-position:-26px -131px;}
 
 .nav-left-ul li.on a{color:#fff;}
 .nav-left-ul li.on .schedule{background-position:-29px 2px;}
@@ -517,7 +567,7 @@ html .fc,.fc table{font-size:1em;background:#f2f3f5}.fc td,.fc th{padding:0;vert
 .div-th1{background: #4d8df8;}.div-th2{background: #df4a05;}
 .div-bd{margin-left:10px;margin-bottom:20px;border:1px solid #77e588; border-top:none; }
 .div-bd1{border:1px solid #4d8df8;}.div-bd2{padding:10px 15px;border:1px solid #df4a05; overflow: hidden;zoom:1;}
- #borrowing_amount{width:80px;height:26px;border:1px solid #e5e5e5; text-align: center;}
+#borrowing_amount{width:80px;height:26px;border:1px solid #e5e5e5; text-align: center;}
 .add-data-table{border-collapse: collapse;width:100%;}
 .add-data-table td{border:1px solid #efefef; width:50%; vertical-align: top; }
 .add-data-table .twodl dl{float:left;}
@@ -847,8 +897,8 @@ html .fc,.fc table{font-size:1em;background:#f2f3f5}.fc td,.fc th{padding:0;vert
 /*试卷评分*/
 .mark-score-p1,.mark-score-span{ font-size:16px; color:#333; font-weight:bold;margin-bottom:20px;}
 .mark-score-p2{ padding:5px 0;font-size:16px; color: #515151; background: #f7f7f7; line-height: 24px; border-bottom:1px solid #e9e7e7;padding-left: 20px;
- text-indent: 2em;}
- .mark-score-p3{overflow: hidden; margin: 30px 0;}
+    text-indent: 2em;}
+.mark-score-p3{overflow: hidden; margin: 30px 0;}
 .mark-score-span{margin: 10px 0; display: block;}
 .mark-score-p3 span {float: right; font-size:16px;color: #333; font-weight:bold;}
 .mark-score-p3 .setscore{width:60px; height:35px; border:1px solid;border:1px solid #167ac1;border-radius:5px; line-height: 35px; text-align: center;}

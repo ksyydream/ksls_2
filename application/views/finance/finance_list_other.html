@@ -22,6 +22,12 @@
                     <li ><a href="/finance/finance_list"><em class="finance"></em>我的金融</a></li>
                     {{/if}}
                     <li class="on"><a href="/finance/finance_list_other"><em class="finance"></em>金融服务</a></li>
+                    <li><a href="/finance/finance_list_other"><em class="financem financewtj"></em>未提交</a></li>
+                    <li><a href="/finance/finance_list_other"><em class="financem financedsp"></em>待审批</a></li>
+                    <li><a href="/finance/finance_list_other"><em class="financem financetg"></em>审批通过</a></li>
+                    <li><a href="/finance/finance_list_other"><em class="financem financewtg"></em>审批未通过</a></li>
+                    <li><a href="/finance/finance_list_other"><em class="financem financejan"></em>结案</a></li>
+                    <li><a href="/finance/finance_list_other"><em class="financem financezh"></em>终止</a></li>
                 </ul>
             </div>
         </div>
@@ -69,15 +75,15 @@
                     <div class="search-wrap" style="margin-left: 40px;">
                         <input type="text" name="borrower_name" value="{{$finance_list.borrower_name|default:''}}" placeholder="姓名" class="sel-begin-time areanumber"/>
                         <input type="text" name="finance_num" value="{{$finance_list.finance_num|default:''}}" placeholder="编号" class="sel-begin-time areanumber" />
-                        <select name="status">
-                            <option value="">进程选择</option>
-                            <option {{if $finance_list.status == 1}}selected{{/if}} value="1">未提交</option>
-                            <option {{if $finance_list.status == 2}}selected{{/if}} value="2">待审批</option>
-                            <option {{if $finance_list.status == 3}}selected{{/if}} value="3">审批通过</option>
-                            <option {{if $finance_list.status == 4}}selected{{/if}} value="5">审批未通过</option>
-                            <option {{if $finance_list.status == 5}}selected{{/if}} value="4">结案</option>
-                            <option {{if $finance_list.status == -1}}selected{{/if}} value="-1">终止</option>
-                        </select>
+                        <!--<select name="status">-->
+                            <!--<option value="">进程选择</option>-->
+                            <!--<option {{if $finance_list.status == 1}}selected{{/if}} value="1">未提交</option>-->
+                            <!--<option {{if $finance_list.status == 2}}selected{{/if}} value="2">待审批</option>-->
+                            <!--<option {{if $finance_list.status == 3}}selected{{/if}} value="3">审批通过</option>-->
+                            <!--<option {{if $finance_list.status == 4}}selected{{/if}} value="5">审批未通过</option>-->
+                            <!--<option {{if $finance_list.status == 5}}selected{{/if}} value="4">结案</option>-->
+                            <!--<option {{if $finance_list.status == -1}}selected{{/if}} value="-1">终止</option>-->
+                        <!--</select>-->
 
                         <input placeholder="创建时间" type="text" name="Cstart_date" id="J_CDepDate" value="{{$finance_list.Cstart_date|default:''}}" class="sel-begin-time" />
                         <span class="time-break"> </span>

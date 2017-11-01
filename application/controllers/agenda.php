@@ -50,20 +50,23 @@ class Agenda extends MY_Controller
         }
     }
 
-    public function list_agenda($page=1) {
+    public function list_agenda($page=1,$course=1,$status=null) {
+        if($this->input->POST('status')) {
+            $status = $this->input->POST('status');
+        }
+        $this->assign('status', $status);
+        if($this->input->POST('course')) {
+            $course = $this->input->POST('course');
+        }
+        $this->assign('course', $course);
         $permission_id = $this->session->userdata('login_permission_id');
         $this->assign('permission_id', $permission_id);
         $position_id = $this->session->userdata('login_position_id_array');
         $this->assign('position_id', $position_id);
         $course_list = $this->agenda_model->get_course();
         $this->assign('course_list', $course_list);
-        if($this->input->POST('status')) {
-            $this->assign('status', $this->input->POST('status'));
-        }
-        if($this->input->POST('course')) {
-            $this->assign('course', $this->input->POST('course'));
-        }
-        $data = $this->agenda_model->list_agenda($page, $this->session->userdata('login_user_id'));
+
+        $data = $this->agenda_model->list_agenda($page, $this->session->userdata('login_user_id'),null,null,$course,$status);
         $this->assign('agenda_list', $data);
 
         $pager = $this->pagination->getPageLink('/agenda/list_agenda', $data['countPage'], $data['numPerPage']);
@@ -71,7 +74,15 @@ class Agenda extends MY_Controller
         $this->display('list_agenda.html');
     }
 
-    function list_agenda_other($page=1){
+    function list_agenda_other($page=1,$course=1,$status=null){
+        if($this->input->POST('status')) {
+            $status = $this->input->POST('status');
+        }
+        $this->assign('status', $status);
+        if($this->input->POST('course')) {
+            $course = $this->input->POST('course');
+        }
+        $this->assign('course', $course);
         $permission_id = $this->session->userdata('login_permission_id');
         $this->assign('permission_id', $permission_id);
         $position_id = $this->session->userdata('login_position_id_array');
@@ -165,7 +176,7 @@ class Agenda extends MY_Controller
         if($this->input->POST('subsidiary')) {
             $this->assign('subsidiary', $this->input->POST('subsidiary'));
         }
-        $data = $this->agenda_model->list_agenda($page,null,$subsidiary_id,$company_id);
+        $data = $this->agenda_model->list_agenda($page,null,$subsidiary_id,$company_id,$course,$status);
         $this->assign('agenda_list', $data);
 
         $pager = $this->pagination->getPageLink('/agenda/list_agenda_other', $data['countPage'], $data['numPerPage']);

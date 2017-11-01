@@ -18,7 +18,7 @@ class Finance_model extends MY_Model
         parent::__destruct();
     }
 
-    public function finance_list($page,$user_id = null,$subsidiary_id=null,$company_id=null,$pageNum_ = 10){
+    public function finance_list($page,$user_id = null,$subsidiary_id=null,$company_id=null,$pageNum_ = 10,$status=null){
         // 每页显示的记录条数，默认20条
         $numPerPage = $this->input->post('numPerPage') ? $this->input->post('numPerPage') : $pageNum_;
         $pageNum = $this->input->post('pageNum') ? $this->input->post('pageNum') : $page;
@@ -31,9 +31,14 @@ class Finance_model extends MY_Model
         if($user_id){
             $this->db->where('a.user_id',$user_id);
         }
-        if($this->input->post('status')){
-            $this->db->where('a.status',$this->input->post('status'));
+        if($status){
+                $this->db->where('a.status',$status);
+        }else{
+            if($this->input->post('status')){
+                $this->db->where('a.status',$this->input->post('status'));
+            }
         }
+
         if($this->input->post('finance_num')){
             $this->db->like('a.finance_num',trim($this->input->post('finance_num')));
         }
@@ -87,8 +92,12 @@ class Finance_model extends MY_Model
         if($user_id){
             $this->db->where('a.user_id',$user_id);
         }
-        if($this->input->post('status')){
-            $this->db->where('a.status',$this->input->post('status'));
+        if($status){
+            $this->db->where('a.status',$status);
+        }else{
+            if($this->input->post('status')){
+                $this->db->where('a.status',$this->input->post('status'));
+            }
         }
         if($this->input->post('finance_num')){
             $this->db->like('a.finance_num',trim($this->input->post('finance_num')));

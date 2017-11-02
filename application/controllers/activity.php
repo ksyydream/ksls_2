@@ -55,7 +55,13 @@ class Activity extends MY_Controller {
         }
     }
 
-    public function list_activity($page=1) {
+    public function list_activity($page=1,$status=1) {
+        if($this->input->POST('status')) {
+            $status = $this->input->POST('status');
+        }
+        $this->assign('status', $status);
+        $status_ = array();
+        $status_[] = $status;
         $permission_id = $this->session->userdata('login_permission_id');
         $this->assign('permission_id', $permission_id);
 
@@ -66,7 +72,7 @@ class Activity extends MY_Controller {
             $this->assign('end_date', $this->input->POST('end_date'));
         }
 
-        $data = $this->activity_model->list_activity($page, array(1,2,3), $this->session->userdata('login_user_id'));
+        $data = $this->activity_model->list_activity($page, $status_, $this->session->userdata('login_user_id'));
         $this->assign('activity_list', $data);
 
         $this->assign('tomorrow', date('Ymd', strtotime("+1 day")));
@@ -77,9 +83,13 @@ class Activity extends MY_Controller {
         $this->display('list_activity.html');
     }
 
-    public function list_review($page=1,$flag=null) {
-
-
+    public function list_review($page=1,$flag=null,$status=2) {
+        if($this->input->POST('status')) {
+            $status = $this->input->POST('status');
+        }
+        $this->assign('status', $status);
+        $status_ = array();
+        $status_[] = $status;
         $permission_id = $this->session->userdata('login_permission_id');
         $this->assign('permission_id', $permission_id);
        // $subsidiary_id_array = $this->session->userdata('login_subsidiary_id_array');
@@ -131,7 +141,7 @@ class Activity extends MY_Controller {
         if($permission_id > 2) {//如果不是总经理 就只能查看自己门店的人员
             $subsidiary_id = $this->session->userdata('login_subsidiary_id_array');
         }
-        $data = $this->activity_model->list_activity($page, array(1,2,3), NULL, $subsidiary_id, $company_id,$flag);
+        $data = $this->activity_model->list_activity($page, $status_, NULL, $subsidiary_id, $company_id,$flag);
         $this->assign('activity_list', $data);
 
         $pager = $this->pagination->getPageLink('/activity/list_review', $data['countPage'], $data['numPerPage']);

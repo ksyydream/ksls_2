@@ -39,6 +39,24 @@ body{background: #fff; font-family: "Microsoft YaHei";}p{white-space: normal; wo
 .index .tableshortcut{width:765px; margin:0 auto;overflow: hidden;zoom:1; height:122px; }
 .index .othershortcut{height:175px; margin-top: 20px;}
 .index .content .othershortcut  .a-btns {margin-right:25px; }.index .content .othershortcut  .a-btns:last-child{margin: 0;}
+
+.otherindex{background: url(/static/images/index/index_bg.jpg) no-repeat center top; height:600px;}
+.otherindex .wraper{background: none;}
+.otherindex .wraper .main1000{padding:50px 0; width: 1000px; margin: 0 auto;}
+.otherindex .wraper .main-left{width: 500px; height: 500px;float: left;background: url(/static/images/index/index_inner_bg1.png) no-repeat;}
+.otherindex .wraper .main-right{width: 500px; height: 500px;float: left;background: url(/static/images/index/index_inner_bg2.png) no-repeat;}
+.otherindex .wraper .main-left .index-logo{margin:160px 0 0 152px;}
+
+.otherindex .wraper .ind-logo-tit{padding-top: 80px;text-align: center;}
+.otherindex .wraper .ind-logo-tit .fz24{font-size: 24px; color: #454444;}
+.otherindex .wraper .ind-logo-tit .fz12{font-size: 12px; color: #a7a5a5;}
+.otherindex .wraper .user-login-div{margin: 20px 148px;}
+.otherindex .wraper .user-login-div .username-input,.index .wraper .user-login-div .userpwd-input{width: 100%;
+    padding: 10px 0; background: none;border:none;border-bottom: 1px solid #b3b3b3;}
+.otherindex .wraper .user-login-div .username,.index .wraper .user-login-div .userpwd{margin:10px 0;}
+.otherindex .wraper .user-login-div .userpwd{margin-bottom:20px;}
+.otherindex .wraper .user-login-div .loginBtn{width:200px; height: 30px; border-radius: 5px; background: #b3b3b3;
+    display: block; text-align: center; line-height: 30px; color: #fff; }
 /*首页桌面快捷方式*/
 .settingbtn{ width: 18px; height:18px; display: block;
     background: url(../images/add_icon.png) no-repeat 0 -324px; position: absolute; top:10px;right:10px;}

@@ -20,23 +20,23 @@
                     <li><a href="/"><em class="home"></em>回到首页</a></li>
                     <li class="on"><a href="/finance/finance_list"><em class="finance"></em>我的金融</a>
                          <span class="document-nav-list document-nav-list1">
-                            <a href="/finance/finance_list_other" class="on">未提交</a>
-                            <a href="/finance/finance_list_other">待审批</a>
-                            <a href="/finance/finance_list_other">审批通过</a>
-                            <a href="/finance/finance_list_other">审批未通过</a>
-                            <a href="/finance/finance_list_other">结案</a>
-                            <a href="/finance/finance_list_other">终止</a>
+                            <a href="/finance/finance_list/1/1" {{if $status==1}} class="on" {{/if}}>未提交</a>
+                            <a href="/finance/finance_list/1/2" {{if $status==2}} class="on" {{/if}}>待审批</a>
+                            <a href="/finance/finance_list/1/3" {{if $status==3}} class="on" {{/if}}>审批通过</a>
+                            <a href="/finance/finance_list/1/4" {{if $status==4}} class="on" {{/if}}>审批未通过</a>
+                            <a href="/finance/finance_list/1/5" {{if $status==5}} class="on" {{/if}}>结案</a>
+                            <a href="/finance/finance_list/1/-1" {{if $status==-1}} class="on" {{/if}}>终止</a>
                         </span>
                     </li>
                     {{if $permission_id < 5 || in_array(12,$position_id)}}
                     <li><a href="/finance/finance_list_other"><em class="financem financeservice"></em>金融服务</a>
                         <span class="document-nav-list document-nav-list1">
-                            <a href="/finance/finance_list_other">未提交</a>
-                            <a href="/finance/finance_list_other">待审批</a>
-                            <a href="/finance/finance_list_other">审批通过</a>
-                            <a href="/finance/finance_list_other">审批未通过</a>
-                            <a href="/finance/finance_list_other">结案</a>
-                            <a href="/finance/finance_list_other">终止</a>
+                           <a href="/finance/finance_list_other/1/1">未提交</a>
+                            <a href="/finance/finance_list_other/1/2">待审批</a>
+                            <a href="/finance/finance_list_other/1/3">审批通过</a>
+                            <a href="/finance/finance_list_other/1/4">审批未通过</a>
+                            <a href="/finance/finance_list_other/1/5">结案</a>
+                            <a href="/finance/finance_list_other/1/-1">终止</a>
                         </span>
                     </li>
                     {{/if}}
@@ -48,15 +48,7 @@
                     <div class="search-wrap" style="margin-left: 40px;">
                     <input type="text" name="borrower_name" value="{{$finance_list.borrower_name|default:''}}" placeholder="姓名" class="sel-begin-time areanumber"/>
                     <input type="text" name="finance_num" value="{{$finance_list.finance_num|default:''}}" placeholder="编号" class="sel-begin-time areanumber" />
-                    <select name="status">
-                        <option value="">进程选择</option>
-                        <option {{if $finance_list.status == 1}}selected{{/if}} value="1">未提交</option>
-                        <option {{if $finance_list.status == 2}}selected{{/if}} value="2">待审批</option>
-                        <option {{if $finance_list.status == 3}}selected{{/if}} value="3">审批通过</option>
-                        <option {{if $finance_list.status == 4}}selected{{/if}} value="5">审批未通过</option>
-                        <option {{if $finance_list.status == 5}}selected{{/if}} value="4">结案</option>
-                        <option {{if $finance_list.status == -1}}selected{{/if}} value="-1">终止</option>
-                    </select>
+                   <input type="hidden" name="status" value="{{$status}}">
                         <input placeholder="创建时间" type="text" name="Cstart_date" id="J_CDepDate" value="{{$finance_list.Cstart_date|default:''}}" class="sel-begin-time" />
                         <span class="time-break"> </span>
                         <input placeholder="创建时间" type="text" name="Cend_date" id="J_CEndDate" value="{{$finance_list.Cend_date|default:''}}" class="sel-end-time" />

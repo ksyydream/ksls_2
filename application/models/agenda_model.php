@@ -52,7 +52,7 @@ class Agenda_model extends MY_Model
         return $this->db->get()->result_array();
     }
 
-    function list_agenda($page,$user_id = null,$subsidiary_id=null,$company_id=null){
+    function list_agenda($page,$user_id = null,$subsidiary_id=null,$company_id=null,$course=null,$status=null){
         // 每页显示的记录条数，默认20条
         $numPerPage = $this->input->post('numPerPage') ? $this->input->post('numPerPage') : 10;
         $pageNum = $this->input->post('pageNum') ? $this->input->post('pageNum') : $page;
@@ -66,11 +66,13 @@ class Agenda_model extends MY_Model
         if(!empty($user_id)){
             $this->db->where('a.user_id',$user_id);
         }
-        if($this->input->post('status')){
-                $this->db->where('a.status',$this->input->post('status'));
+        if($status){
+                $this->db->where('a.status',$status);
+        }else{
+            $this->db->where_in('a.status',array(1,2));
         }
-        if($this->input->post('course')){
-            $this->db->where('a.course',$this->input->post('course'));
+        if($course && $course != -1){
+            $this->db->where('a.course',$course);
         }
         if($this->input->post('num')){
             $this->db->like('a.num',trim($this->input->post('num')));
@@ -146,11 +148,13 @@ class Agenda_model extends MY_Model
         if(!empty($user_id)){
             $this->db->where('a.user_id',$user_id);
         }
-        if($this->input->post('status')){
-                $this->db->where('a.status',$this->input->post('status'));
+        if($status){
+            $this->db->where('a.status',$status);
+        }else{
+            $this->db->where_in('a.status',array(1,2));
         }
-        if($this->input->post('course')){
-            $this->db->where('a.course',$this->input->post('course'));
+        if($course && $course != -1){
+            $this->db->where('a.course',$course);
         }
         if($this->input->post('num')){
             $this->db->like('a.num',trim($this->input->post('num')));

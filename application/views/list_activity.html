@@ -18,7 +18,13 @@
                 <ul class="nav-left-ul">
                     <li><a href="/"><em class="home"></em>回到首页</a></li>
                     {{if $permission_id >= 5 }}
-                    <li class="on"><a href="/activity/list_activity"><em class="schedule"></em>我的行程</a></li>
+                    <li class="on"><a href="/activity/list_activity"><em class="schedule"></em>我的行程</a>
+                    <span class="document-nav-list document-nav-list1">
+                            <a href="/activity/list_activity/1/1" {{if $status=="1"}} class="on" {{/if}}>未自评</a>
+                        <a href="/activity/list_activity/1/2" {{if $status=="2"}} class="on" {{/if}}>未审核</a>
+                        <a href="/activity/list_activity/1/3" {{if $status=="3"}} class="on" {{/if}}>审核完成</a>
+                        </span>
+                    </li>
                     {{/if}}
                     {{if $permission_id < 5 }}
                         <li><a href="/activity/list_review/1/1"><em class="verify"></em>我的审核</a></li>
@@ -26,12 +32,14 @@
                     {{if $permission_id < 5 }}
                     <li><a href="/activity/list_noplan/1/1"><em class="verify"></em>未计划</a></li>
                     {{/if}}
+                    <li><a href="/activity/list_ranking"><em class="verify"></em>绩效排行</a></li>
                 </ul>
             </div>
         </div>
         <div class="wrap-right">
             <div class="search-wrap">
                 <form id="formSearchActivity" method="POST" action="/activity/list_activity">
+                    <input type="hidden" value="{{$status}}" name="status">
                     <input type="text" name="start_date" id="J_DepDate" value="{{$start_date|default:''}}" class="sel-begin-time" />
                     <span class="time-break"> </span>
                     <input type="text" name="end_date" id="J_EndDate" value="{{$end_date|default:''}}" class="sel-end-time" />

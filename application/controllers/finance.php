@@ -94,15 +94,21 @@ class Finance extends MY_Controller
         }
     }
     //获取 我的金融 列表
-    public function finance_list($page=1){
-        $data = $this->finance_model->finance_list($page,$this->session->userdata('login_user_id'));
+    public function finance_list($page=1,$status=1){
+        if($this->input->post("status"))
+            $status = $this->input->post("status");
+        $this->assign('status', $status);
+        $data = $this->finance_model->finance_list($page,$this->session->userdata('login_user_id'),null,null,10,$status);
         $this->assign('finance_list', $data);
         $pager = $this->pagination->getPageLink('/finance/finance_list', $data['countPage'], $data['numPerPage']);
         $this->assign('pager', $pager);
         $this->display('finance/finance-list.html');
     }
 
-    public function finance_list_other($page=1){
+    public function finance_list_other($page=1,$status=1){
+        if($this->input->post("status"))
+            $status = $this->input->post("status");
+        $this->assign('status', $status);
         $position_id = $this->session->userdata('login_position_id_array');
         $permission_id = $this->session->userdata('login_permission_id');
         $company_id = NULL;
@@ -169,7 +175,7 @@ class Finance extends MY_Controller
             }
             $user_id = $this->input->POST('user')?$this->input->POST('user'):NULL;
         }
-        $data = $this->finance_model->finance_list($page,$user_id,$subsidiary_id,$company_id);
+        $data = $this->finance_model->finance_list($page,$user_id,$subsidiary_id,$company_id,10,$status);
         //die(var_dump($data));
         $this->assign('finance_list', $data);
         $pager = $this->pagination->getPageLink('/finance/finance_list_other', $data['countPage'], $data['numPerPage']);

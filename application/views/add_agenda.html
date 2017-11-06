@@ -20,13 +20,13 @@
                     {{if !in_array(2,$position_id) && $permission_id > 2 && !in_array(8,$position_id) && !in_array(9,$position_id)}}
                     <li class="on"><a href="/agenda/list_agenda"><em class="myagenda"></em>我的代办</a>
                         <span class="document-nav-list document-nav-list1">
-                            <a href="/agenda/list_agenda/1/1" {{if $course=="1"}} class="on" {{/if}}>审核中</a>
-                             <a href="/agenda/list_agenda/1/2" {{if $course=="2"}} class="on" {{/if}}>贷款预审中</a>
-                             <a href="/agenda/list_agenda/1/3" {{if $course=="3"}} class="on" {{/if}}>网签中</a>
-                             <a href="/agenda/list_agenda/1/4" {{if $course=="4"}} class="on" {{/if}}>预约过户中</a>
-                             <a href="/agenda/list_agenda/1/5" {{if $course=="5"}} class="on" {{/if}}>等待出证</a>
-                             <a href="/agenda/list_agenda/1/6" {{if $course=="6"}} class="on" {{/if}}>等待放款</a>
-                             <a href="/agenda/list_agenda/1/-1/3" {{if $course=="-1"}} class="on" {{/if}}>服务完成</a>
+                            <a href="/agenda/list_agenda/1/1" >审核中</a>
+                             <a href="/agenda/list_agenda/1/2" >贷款预审中</a>
+                             <a href="/agenda/list_agenda/1/3" >网签中</a>
+                             <a href="/agenda/list_agenda/1/4" >预约过户中</a>
+                             <a href="/agenda/list_agenda/1/5" >等待出证</a>
+                             <a href="/agenda/list_agenda/1/6" >等待放款</a>
+                             <a href="/agenda/list_agenda/1/-1/3">服务完成</a>
                         </span>
                     </li>
                     {{/if}}

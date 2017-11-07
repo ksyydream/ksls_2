@@ -17,7 +17,9 @@
             <a href="/" class="logo"><img src="/static/images/logo.jpg" alt="" width="130" height="35"></a>
             <div class="nav-left">
                 <ul class="nav-left-ul">
+                    {{if $login_flag == -1 }}
                     <li><a href="/"><em class="home"></em>回到首页</a></li>
+                    {{/if}}
                     <li class="on"><a href="/hire/hire_list"><em class="schedule"></em>租房信息</a></li>
                     <li><a href="/hire/hire_deadline_list"><em class="noplan"></em>提醒到期</a></li>
                 </ul>

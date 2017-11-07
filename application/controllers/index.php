@@ -18,6 +18,33 @@ class Index extends MY_Controller {
         $this->load->model('news_model');
     }
 
+    function _remap($method,$params = array()) {
+        if(!$this->session->userdata('login_user_id')) {
+
+        } else {
+            if($method == 'jinrong' || $method == 'peixun' || $method == 'quanzheng' || $method == 'xingcheng'){
+                if($this->session->userdata('login_flag') == 1){
+                    redirect(site_url('/finance/finance_list'));
+                    exit();
+                }
+                if($this->session->userdata('login_flag') == 2){
+                    redirect(site_url('/examination/mark_list'));
+                    exit();
+                }
+                if($this->session->userdata('login_flag') == 3){
+                    redirect(site_url('/agenda/list_agenda'));
+                    exit();
+                }
+                if($this->session->userdata('login_flag') == 4){
+                    redirect(site_url('/activity/list_activity'));
+                    exit();
+                }
+            }
+
+        }
+        return call_user_func_array(array($this, $method), $params);
+    }
+
     public function index($page=1) {
 
         $data = $this->news_model->list_news($page);
@@ -153,5 +180,57 @@ class Index extends MY_Controller {
 
     public function set_cggg_msg(){
         $this->user_model->set_cggg_msg();
+    }
+
+    public function jinrong(){
+        if($this->input->post('username')){
+            $res = $this->user_model->ksls_2_login(1);
+            if($res == 1){
+                redirect(site_url('/finance/finance_list'));
+            }
+            $this->assign('flag', $res);
+        }else{
+            $this->assign('flag', 0);
+        }
+        $this->display('jinrong_index.html');
+    }
+
+    public function peixun(){
+        if($this->input->post('username')){
+            $res = $this->user_model->ksls_2_login(2);
+            if($res == 1){
+                redirect(site_url('/examination/mark_list'));
+            }
+            $this->assign('flag', $res);
+        }else{
+            $this->assign('flag', 0);
+        }
+        $this->display('peixun_index.html');
+    }
+
+    public function quanzheng(){
+        if($this->input->post('username')){
+            $res = $this->user_model->ksls_2_login(3);
+            if($res == 1){
+                redirect(site_url('/agenda/list_agenda'));
+            }
+            $this->assign('flag', $res);
+        }else{
+            $this->assign('flag', 0);
+        }
+        $this->display('quanzheng_index.html');
+    }
+
+    public function xingcheng(){
+        if($this->input->post('username')){
+            $res = $this->user_model->ksls_2_login(4);
+            if($res == 1){
+                redirect(site_url('/activity/list_activity'));
+            }
+            $this->assign('flag', $res);
+        }else{
+            $this->assign('flag', 0);
+        }
+        $this->display('xingcheng_index.html');
     }
 }

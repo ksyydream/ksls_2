@@ -13,27 +13,7 @@
 </head>
 <body>
     <div class="doc otherindex">
-        <div class="header-wrap">
-            <div class="header-in-wrap">
-                <div class="header-left">
-                    <!--<p>昆山 5月03日 周二 11：16</p>-->
-                    <span class="location">昆山</span>
-                    <div class="weather" id="Jweather">
-                        <ul class="ulWeather" id="JulWeather">
-                        </ul>
-                    </div>
-                    <div class="h-bor">|</div>
-
-                    <div class="currentTime">
-                        <div id="Jtime"></div>
-                        <div id='calendar'></div>
-                    </div>
-                </div>
-<!--                 <div class="login-info">
-                                    <a href="javascript:" class="login-out" id="Jloginout">登录</a>
-                            </div> -->
-            </div>
-        </div>
+        {{include file='header_ksls.html'}}
         <div class="wraper clearfix">
             <div class="main1000">
                 <div class="main-left">
@@ -45,15 +25,17 @@
                         <em class="fz24">在职培训系统</em><br /><em class="fz12">Schedule Manage</em></div>
                     </div>
 
-                    <div class="user-login-div">
-                        <div class="username">
-                            <input type="text" class="username-input" placeholder="请输入用户名">
+                    <form id="login_form" method="post" action="/index/peixun">
+                        <div class="user-login-div">
+                            <div class="username">
+                                <input id="username" name="username" type="text" class="username-input" placeholder="请输入用户名" required>
+                            </div>
+                            <div class="userpwd">
+                                <input id="pwd" name="pwd" type="password" class="userpwd-input" placeholder="请输入密码" required>
+                            </div>
+                            <a href="javascript:" id="login_btn" class="loginBtn">登 录</a>
                         </div>
-                        <div class="userpwd">
-                            <input type="text" class="userpwd-input" placeholder="请输入密码">
-                        </div>
-                        <a href="javascript:" class="loginBtn">登 录</a>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -189,6 +171,18 @@
         $("#icon_mytable").click(function() {
             $("#iconConfigForm").submit();
         });
+
+        $("#login_btn").click(function(){
+            if($.trim($("#username").val())==""){
+                layer.msg('请输入用户名')
+                return false;
+            }
+            if($.trim($("#pwd").val())==""){
+                layer.msg('请输入密码')
+                return false;
+            }
+            $("#login_form").submit();
+        })
      </script>
 </body>
 </html>

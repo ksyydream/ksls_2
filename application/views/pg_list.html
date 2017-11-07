@@ -44,7 +44,9 @@
             <a href="/" class="logo"><img src="/static/images/logo.jpg" alt="" width="130" height="35"></a>
             <div class="nav-left">
                 <ul class="nav-left-ul">
+                    {{if $login_flag == -1 }}
                     <li><a href="/"><em class="home"></em>回到首页</a></li>
+                    {{/if}}
                     <li class="on"><a href="/pg/pg_list"><em class="schedule"></em>评估列表</a></li>
                 </ul>
             </div>

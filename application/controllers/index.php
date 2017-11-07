@@ -118,8 +118,25 @@ class Index extends MY_Controller {
     }
 
     public function logout() {
+        $login_flag = $this->session->userdata('login_flag')?$this->session->userdata('login_flag'):-1;
         $this->session->sess_destroy();
-        redirect(site_url('/'));
+        switch ($login_flag){
+            case 1:
+                redirect(site_url('/index/jinrong'));
+                break;
+            case 2:
+                redirect(site_url('/index/peixun'));
+                break;
+            case 2:
+                redirect(site_url('/index/quanzheng'));
+                break;
+            case 2:
+                redirect(site_url('/index/xingcheng'));
+                break;
+            default:
+                redirect(site_url('/'));
+        }
+
     }
 
     public function check_login() {

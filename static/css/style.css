@@ -51,7 +51,7 @@ body{background: #fff; font-family: "Microsoft YaHei";}p{white-space: normal; wo
 .otherindex .wraper .ind-logo-tit .fz24{font-size: 24px; color: #454444;}
 .otherindex .wraper .ind-logo-tit .fz12{font-size: 12px; color: #a7a5a5;}
 .otherindex .wraper .user-login-div{margin: 20px 148px;}
-.otherindex .wraper .user-login-div .username-input,.index .wraper .user-login-div .userpwd-input{width: 100%;
+.otherindex .wraper .user-login-div .username-input,.otherindex .wraper .user-login-div .userpwd-input{width: 100%;
     padding: 10px 0; background: none;border:none;border-bottom: 1px solid #b3b3b3;}
 .otherindex .wraper .user-login-div .username,.index .wraper .user-login-div .userpwd{margin:10px 0;}
 .otherindex .wraper .user-login-div .userpwd{margin-bottom:20px;}

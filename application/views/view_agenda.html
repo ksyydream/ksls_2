@@ -18,12 +18,34 @@
             <a href="/" class="logo"><img src="/static/images/logo.jpg" alt="" width="130" height="35"></a>
             <div class="nav-left">
                 <ul class="nav-left-ul">
+                    {{if $login_flag == -1 }}
                     <li><a href="/"><em class="home"></em>回到首页</a></li>
+                    {{/if}}
                     {{if !in_array(2,$position_id) && $permission_id > 2 && !in_array(8,$position_id) && !in_array(9,$position_id)}}
-                    <li {{if $style == 1}}class="on"{{/if}}><a href="/agenda/list_agenda"><em class="myagenda"></em>我的代办</a></li>
+                    <li {{if $style == 1}}class="on"{{/if}}><a href="/agenda/list_agenda"><em class="myagenda"></em>我的代办</a>
+                     <span class="document-nav-list document-nav-list1">
+                            <a href="/agenda/list_agenda/1/1" >审核中</a>
+                             <a href="/agenda/list_agenda/1/2" >贷款预审中</a>
+                             <a href="/agenda/list_agenda/1/3" >网签中</a>
+                             <a href="/agenda/list_agenda/1/4" >预约过户中</a>
+                             <a href="/agenda/list_agenda/1/5" >等待出证</a>
+                             <a href="/agenda/list_agenda/1/6" >等待放款</a>
+                             <a href="/agenda/list_agenda/1/-1/3">服务完成</a>
+                        </span>
+                    </li>
                     {{/if}}
                     {{if $permission_id < 5 || in_array(2,$position_id) || in_array(8,$position_id) || in_array(9,$position_id)}}
-                    <li {{if $style == 2}}class="on"{{/if}}><a href="/agenda/list_agenda_other"><em class="allagenda"></em>代办事项</a></li>
+                    <li {{if $style == 2}}class="on"{{/if}}><a href="/agenda/list_agenda_other"><em class="allagenda"></em>代办事项</a>
+                     <span class="document-nav-list document-nav-list1">
+                            <a href="/agenda/list_agenda_other/1/1">审核中</a>
+                            <a href="/agenda/list_agenda_other/1/2">贷款预审中</a>
+                            <a href="/agenda/list_agenda_other/1/3">网签中</a>
+                            <a href="/agenda/list_agenda_other/1/4">预约过户中</a>
+                            <a href="/agenda/list_agenda_other/1/5">等待出证</a>
+                            <a href="/agenda/list_agenda_other/1/6">等待放款</a>
+                            <a href="/agenda/list_agenda_other/1/-1/3">服务完成</a>
+                        </span>
+                    </li>
                     {{/if}}
                 </ul>
             </div>

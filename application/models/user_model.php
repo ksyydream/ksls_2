@@ -78,6 +78,7 @@ class User_model extends MY_Model
            // $user_info['login_position_id'] = $res->position_id; 此栏位暂不使用
             $user_info['login_position_id_array'] = $ids;
             $user_info['login_user_pic'] = $res->pic;
+            $user_info['login_flag'] = -1;
             $this->session->set_userdata($user_info);
             return 1;
         }
@@ -239,5 +240,67 @@ class User_model extends MY_Model
         );
         $this->wxpost($this->config->item('WX_JGTZ'),$data,24);
 
+    }
+
+    public function ksls_2_login($flag=0)
+    {
+        $username = $this->input->post('username');
+        $password = $this->input->post('pwd');
+        $this->db->from('user');
+        $this->db->where('username', $username);
+        $this->db->where('password', sha1($password));
+        $rs = $this->db->get();
+        if ($rs->num_rows() > 0) {
+            $res = $rs->row();
+            if($res->flag==2){
+                return 2;
+            }
+            $role_p = $this->db->select()->where('id',$res->role_id)->from('role')->get()->row();
+            $company_flag = $this->db->where('id',$res->company_id)->from('company')->get()->row_array();
+            if($role_p->permission_id !=1){
+                if($company_flag){
+                    if($company_flag['flag']==2 && $role_p->permission_id !=1){
+                        return 3;
+                    }
+                }else{
+                    return 3;
+                }
+            }
+            $token = uniqid();
+            $this->db->where('id',$res->id)->update('user',array('token'=>$token));
+            $pids = $this->db->select()->from('user_position')->where('user_id',$res->id)->get()->result_array();
+            $ids = array();
+            if($pids){
+                foreach($pids as $id){
+                    $ids[]=$id['pid'];
+                }
+            }
+
+            $subids = $this->db->select()->from('user_subsidiary')->where('user_id',$res->id)->get()->result_array();
+            $sids = array();
+            if($subids){
+                foreach($subids as $id){
+                    $sids[]=$id['subsidiary_id'];
+                }
+            }
+
+            $user_info['login_token'] = $token;
+            $user_info['login_user_id'] = $res->id;
+            $user_info['login_username'] = $username;
+            $user_info['login_password'] = $res->password;
+            $user_info['login_rel_name'] = $res->rel_name;
+            $user_info['login_role_id'] = $res->role_id;
+            $user_info['login_permission_id'] = $role_p->permission_id;
+            $user_info['login_company_id'] = $res->company_id;
+            //  $user_info['login_subsidiary_id'] = $res->subsidiary_id;
+            $user_info['login_subsidiary_id_array'] = $sids;
+            // $user_info['login_position_id'] = $res->position_id; 此栏位暂不使用
+            $user_info['login_position_id_array'] = $ids;
+            $user_info['login_user_pic'] = $res->pic;
+            $user_info['login_flag'] = $flag;
+            $this->session->set_userdata($user_info);
+            return 1;
+        }
+        return 0;
     }
 }

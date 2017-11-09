@@ -1089,3 +1089,5 @@ html .fc,.fc table{font-size:1em;background:#f2f3f5}.fc td,.fc th{padding:0;vert
 .finance-process .fas1{margin: 0 10px;}
 .finance-process .fas1 em{font-size: 10px;}
 .finance-process .finance_fangan{border:1px solid #d7d3d3;width:40px; text-align: center; height: 20px; line-height: 20px; text-align: center; border-radius: 3px; }
+
+.add-data-table .finance-select{font-size: 14px;width: 90px; height: 28px; line-height: 28px; background: #f9f9f9;border:1px solid #e5e5e5;}

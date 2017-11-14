@@ -141,9 +141,11 @@
                         </td>
                         <td width="30%"><dl><dt class="">年  龄：</dt>
                             <dd><input type="text" id="spouse_age" value="{{$data.spouse_age|default:''}}"  maxlength="5" name="spouse_age" class="yy_num add-txt add-txt-wid75" /><!-- <em>平方米</em> --></dd></dl></td>
-                        <td><dl><dt class="">性  别：</dt>
+                        <td>
+                           <!-- <dl><dt class="">性  别：</dt>
                             <dd><label><input type="radio" id="spouse_sex_1" name="spouse_sex" {{if $data.spouse_sex|default:0 == 1 }}checked{{/if}} value="1" class="radio-choose" />男</label>
-                                <label><input type="radio" id="spouse_sex_2" name="spouse_sex" {{if $data.spouse_sex|default:0 == 2 }}checked{{/if}} value="2" class="radio-choose" />女</label></dd></dl></td>
+                                <label><input type="radio" id="spouse_sex_2" name="spouse_sex" {{if $data.spouse_sex|default:0 == 2 }}checked{{/if}} value="2" class="radio-choose" />女</label></dd></dl>-->
+                        </td>
                     </tr>
                     <tr>
                         <td><dl><dt class="">籍      贯:</dt><dd><input type="text" maxlength="20" value="{{$data.spouse_native|default:''}}"  id="spouse_native" name="spouse_native" class="add-txt add-txt-wid170" /></dd></dl></td>

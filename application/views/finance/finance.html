@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +65,7 @@
                         <td>
                             <dl>
                                 <dt>学      历：</dt>
-                                <dd><select id="borrower_qualifications" name="borrower_qualifications" class="doc-select">
+                                <dd><select id="borrower_qualifications" name="borrower_qualifications" class="finance-select">
                                     <option {{if $data.borrower_qualifications|default:'' == '小学' }}selected="selected"{{/if}} value="小学">小学</option>
                                     <option {{if $data.borrower_qualifications|default:'' == '初中' }}selected="selected"{{/if}} value="初中">初中</option>
                                     <option {{if $data.borrower_qualifications|default:'' == '中专' }}selected="selected"{{/if}} value="中专">中专</option>
@@ -151,7 +150,7 @@
                         <td>
                             <dl>
                                 <dt>学      历：</dt>
-                                <dd> <select id="spouse_qualifications" name="spouse_qualifications" class="doc-select">
+                                <dd> <select id="spouse_qualifications" name="spouse_qualifications" class="finance-select">
                                     <option {{if $data.spouse_qualifications|default:'' == '小学' }}selected="selected"{{/if}} value="小学">小学</option>
                                     <option {{if $data.spouse_qualifications|default:'' == '初中' }}selected="selected"{{/if}} value="初中">初中</option>
                                     <option {{if $data.spouse_qualifications|default:'' == '中专' }}selected="selected"{{/if}} value="中专">中专</option>

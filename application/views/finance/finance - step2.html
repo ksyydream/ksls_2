@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,7 +101,7 @@
                         <td colspan="2">
                             <dl>
                                 <dt class="wid120">预计还款周期：</dt>
-                                <dd> <select id="repayment" name="repayment" class="doc-select">
+                                <dd> <select id="repayment" name="repayment" class="finance-select">
                                     <option {{if $data.repayment|default:0 == 1 }}selected="selected"{{/if}} value="1">3个月</option>
                                     <option {{if $data.repayment|default:0 == 2 }}selected="selected"{{/if}} value="2">半年</option>
                                     <option {{if $data.repayment|default:0 == 3 }}selected="selected"{{/if}} value="3">一年</option>

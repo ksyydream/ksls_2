@@ -121,8 +121,10 @@
                         </td>
                         <td width="30%"><dl><dt class="">年  龄：</dt>
                             <dd>{{$data.spouse_age|default:''}}</dd></dl></td>
-                        <td><dl><dt class="">性  别：</dt>
-                            <dd>{{if $data.spouse_sex|default:0 == 1 }}男{{/if}}{{if $data.spouse_sex|default:0 == 2 }}女{{/if}}</dd></dl></td>
+                        <td>
+                           <!-- <dl><dt class="">性  别：</dt>
+                            <dd>{{if $data.spouse_sex|default:0 == 1 }}男{{/if}}{{if $data.spouse_sex|default:0 == 2 }}女{{/if}}</dd></dl>-->
+                        </td>
                     </tr>
                     <tr>
                         <td><dl><dt class="">籍      贯:</dt><dd>{{$data.spouse_native|default:''}}</dd></dl></td>

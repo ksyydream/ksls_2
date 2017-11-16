@@ -48,10 +48,7 @@ class Examination extends MY_Controller
                     redirect(site_url('/examination/self_examination'));
                     exit();
                 }
-                if($method == 'save_question'){
-                    redirect(site_url('/examination/self_examination'));
-                    exit();
-                }
+
                 if($method == 'change_exam_flag'){
                     redirect(site_url('/examination/self_examination'));
                     exit();
@@ -73,6 +70,10 @@ class Examination extends MY_Controller
             if(!in_array(5,$login_position_id_array)){
                 if($method == 'enter_examination'){
                     redirect(site_url('/examination/examination_list'));
+                    exit();
+                }
+                if($method == 'save_question'){
+                    redirect(site_url('/examination/self_examination'));
                     exit();
                 }
             }

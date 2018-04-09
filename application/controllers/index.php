@@ -44,7 +44,26 @@ class Index extends MY_Controller {
         }
         return call_user_func_array(array($this, $method), $params);
     }
+    public function index() {
+        if($this->session->userdata('login_flag') == 1){
+            redirect(site_url('/finance/finance_list'));
+            exit();
+        }
+        if($this->session->userdata('login_flag') == 2){
+            redirect(site_url('/examination/mark_list'));
+            exit();
+        }
+        if($this->session->userdata('login_flag') == 3){
+            redirect(site_url('/agenda/list_agenda'));
+            exit();
+        }
+        if($this->session->userdata('login_flag') == 4){
+            redirect(site_url('/activity/list_activity'));
+            exit();
+        }
+    }
 
+/*
     public function index($page=1) {
 
         $data = $this->news_model->list_news($page);
@@ -111,7 +130,7 @@ class Index extends MY_Controller {
 
         $this->display('testhtml/index_test.html');
     }
-
+*/
     public function login() {
         echo $this->user_model->check_login();
         die;

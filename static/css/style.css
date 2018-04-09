@@ -40,11 +40,13 @@ body{background: #fff; font-family: "Microsoft YaHei";}p{white-space: normal; wo
 .index .othershortcut{height:175px; margin-top: 20px;}
 .index .content .othershortcut  .a-btns {margin-right:25px; }.index .content .othershortcut  .a-btns:last-child{margin: 0;}
 
-.otherindex{background: url(/static/images/index/index_bg.jpg) no-repeat center top; height:600px;}
+.peixun{background: url(../images/peixun_bg.jpg) no-repeat center top;height: 550px;}
+
+.otherindex{background: url(../images/index/index_bg.jpg) no-repeat center top; height:600px;}
 .otherindex .wraper{background: none;}
 .otherindex .wraper .main1000{padding:50px 0; width: 1000px; margin: 0 auto;}
-.otherindex .wraper .main-left{width: 500px; height: 500px;float: left;background: url(/static/images/index/index_inner_bg1.png) no-repeat;}
-.otherindex .wraper .main-right{width: 500px; height: 500px;float: left;background: url(/static/images/index/index_inner_bg2.png) no-repeat;}
+.otherindex .wraper .main-left{width: 500px; height: 500px;float: left;background: url(../images/index/index_inner_bg1.png) no-repeat;}
+.otherindex .wraper .main-right{width: 500px; height: 500px;float: left;background: url(../images/index/index_inner_bg2.png) no-repeat;}
 .otherindex .wraper .main-left .index-logo{margin:160px 0 0 152px;}
 
 .otherindex .wraper .ind-logo-tit{padding-top: 80px;text-align: center;}
@@ -57,6 +59,27 @@ body{background: #fff; font-family: "Microsoft YaHei";}p{white-space: normal; wo
 .otherindex .wraper .user-login-div .userpwd{margin-bottom:20px;}
 .otherindex .wraper .user-login-div .loginBtn{width:200px; height: 30px; border-radius: 5px; background: #b3b3b3;
     display: block; text-align: center; line-height: 30px; color: #fff; }
+
+
+
+.quanzheng{background:#eee url(../images/daiban.jpg) repeat-x center top;}
+.main1000{margin: 0 auto; width:1000px;}.main1200{margin: 0 auto; width:1100px;}
+.quanzheng .qz-head{padding: 40px 0;margin-bottom:40px;}
+.quanzheng .qz-head .qz-head-fr{margin-top: 10px;padding:5px 0;width: 150px; float: right;color: #fff;border:1px solid #fff; text-align: center;}
+.quanzheng .qz-con-fl{margin-left:35px;width: 519px; background: #fff;border-radius: 5px; height: 330px;
+    box-shadow:2px 2px 5px #9c9b9b;}
+.quanzheng .qz-con-tit{padding:15px 0; font-family: "Arial"; font-size: 30px;color: #bbb;border-bottom: 1px solid #ddd;}
+.user-login-div{padding:15px 52px 35px;}
+.user-login-div .login-input{font-size: 14px; padding:5px 10px;border: 1px solid #ddd;width:250px; height: 28px; line-height: 40px; background: none; border-radius: 3px;}
+.user-login-div .username,.user-login-div .userpwd{margin-top: 25px;}
+.user-login-div  label{width: 80px; display: inline-block; font-size: 14px; color:#aaa;}
+.user-login-div label em{width: 20px; height: 20px; float:left; margin-right: 5px;background: url(../images/l_user_icon.jpg) no-repeat;}
+.user-login-div label .em-pw{ background: url(../images/l_pwd_icon.jpg) no-repeat;}
+.qz-container {position: relative;}
+.qz-container .sub-div{ background: #f7f7f7; height: 43px;padding:16px 50px;}
+.qz-container .sub-div .loginBtn{width:108px; height: 40px; display: block; background: #2182c9;border-radius: 3px; float: right;
+    font-size: 18px; color: #fff; text-align: center; line-height: 40px;}
+.quangzheng_slogn{ position: absolute;top:0;right:0;}
 /*首页桌面快捷方式*/
 .settingbtn{ width: 18px; height:18px; display: block;
     background: url(../images/add_icon.png) no-repeat 0 -324px; position: absolute; top:10px;right:10px;}
@@ -1090,3 +1113,13 @@ html .fc,.fc table{font-size:1em;background:#f2f3f5}.fc td,.fc th{padding:0;vert
 .finance-process .finance_fangan{border:1px solid #d7d3d3;width:40px; text-align: center; height: 20px; line-height: 20px; text-align: center; border-radius: 3px; }
 
 .add-data-table .finance-select{font-size: 14px;width: 90px; height: 28px; line-height: 28px; background: #f9f9f9;border:1px solid #e5e5e5;}
+
+.px_login{width:420px; height: 380px;  float: right; margin-top: 80px; position: relative; }
+.px_login_bg{width:420px; height: 380px; background: #000; position: absolute; opacity: 0.6; z-index: 1;border-radius: 5px;}
+.px-form{position: absolute; z-index: 2;}
+.px_login .px_logo{margin:50px 0 40px 85px;}
+.px_login .input-div{margin:0 0 20px 45px; background: #98c4e4; border-radius: 3px;padding:3px; width:325px; position: relative;}
+.px_login .username{ background: #fff; height: 40px;padding-left: 50px;width:275px;border:none; font-size: 14px; color:#666;}
+.px_login .input-btn{color:#fff; background:#98c4e4;width:331px;height: 46px; line-height: 46px; font-size: 16px; text-align: center; display: block;margin-left: 45px;border-radius: 3px;}
+.px_login .em-input{position: absolute;top:15px;left:15px; width:17px; height: 19px; display: block; background: url(../images/qz_user.png) no-repeat;}
+.px_login .em-input1{ background: url(../images/qz_pwd.png) no-repeat;}

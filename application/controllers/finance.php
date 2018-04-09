@@ -24,9 +24,8 @@ class Finance extends MY_Controller
 
     function _remap($method,$params = array()) {
         if(!$this->session->userdata('login_user_id') || in_array(1,$this->session->userdata('login_position_id_array'))) {
-            redirect(site_url('/'));
+            redirect(site_url('/index/jinrong'));
         } else {
-
                 if(in_array(12,$this->session->userdata('login_position_id_array'))){
                     if($method == 'add_finance'
                         || $method == 'save_finance_1'

@@ -30,7 +30,7 @@ class Activity extends MY_Controller {
 
     function _remap($method,$params = array()) {
         if(!$this->session->userdata('login_user_id') || in_array(1,$this->session->userdata('login_position_id_array'))) {
-            redirect(site_url('/'));
+            redirect(site_url('/index/xingcheng'));
         } else {
             if($this->session->userdata('login_permission_id') > 4){
                 if($method == 'list_review'){

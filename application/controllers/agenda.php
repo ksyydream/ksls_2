@@ -23,7 +23,7 @@ class Agenda extends MY_Controller
 
     function _remap($method,$params = array()) {
         if(!$this->session->userdata('login_user_id')) {
-            redirect(site_url('/'));
+            redirect(site_url('/index/quanzheng'));
         } else {
             if(in_array(2,$this->session->userdata('login_position_id_array'))
                 || in_array(8,$this->session->userdata('login_position_id_array'))

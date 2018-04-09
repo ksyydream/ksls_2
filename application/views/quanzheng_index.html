@@ -23,17 +23,17 @@
         </div>
         <div class="qz-container">
             <div class="qz-con-fl">
-                <form action="">
+                <form id="login_form" method="post" action="/index/quanzheng">
                     <div class="user-login-div">
                         <div class="qz-con-tit">Login</div>
                         <div class="username">
-                            <label><em></em>用户名</label><input type="text" class="login-input username-input" placeholder="请输入用户名">
+                            <label><em></em>用户名</label><input id="username" name="username" type="text" class="login-input username-input" placeholder="请输入用户名">
                         </div>
                         <div class="userpwd">
-                            <label><em class="em-pw"></em>密码</label><input type="text" class="login-input userpwd-input" placeholder="请输入密码">
+                            <label><em class="em-pw"></em>密码</label><input type="password" id="pwd" name="pwd" class="login-input userpwd-input" placeholder="请输入密码">
                         </div>
                     </div>
-                    <div class="sub-div"><a href="javascript:" class="loginBtn">登 录</a></div>
+                    <div class="sub-div"><a href="javascript:"  id="login_btn" class="loginBtn">登 录</a></div>
 
                 </form>
             </div>
@@ -48,7 +48,7 @@
     </p>
 </div>
     <script type="text/javascript" src="/static/js/jquery-1.9.0.js"></script>
-    <script type="text/javascript" src="/static/js/jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript" src="/static/js/store.min.js"></script>
     <script type="text/javascript" src="/static/js/layer/layer.js"></script>
     <script type="text/javascript">
         $(function() {

@@ -18,13 +18,13 @@
             <div class="px_login_bg"></div>
             <div class="px-form">
                 <img src="/static/images/px_logo.png" alt="" class="px_logo" width="250">
-                <form action="">
+                <form id="login_form" method="post" action="/index/peixun">
                     <div class="input-div">
-                        <em class="em-input"></em><input type="text" value="" class="username">
+                        <em class="em-input"></em><input id="username" name="username" type="text" value="" class="username">
                     </div>
                     <div class="input-div"><em class="em-input"></em>
-                        <em class="em-input em-input1"></em><input type="text" value="" class="username"></div>
-                    <a href="javascript:" class="input-btn">登 录</a>
+                        <em class="em-input em-input1"></em><input type="password" id="pwd" name="pwd" value="" class="username"></div>
+                    <a href="javascript:" id="login_btn" class="input-btn">登 录</a>
                 </form>
             </div>
         </div>
@@ -37,7 +37,8 @@
     昆山楼市房猫服务中心   版权所有
 </p>
 
-    <script type="text/javascript" src="/static/js/jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript" src="/static/js/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/static/js/store.min.js"></script>
     <script type="text/javascript" src="/static/js/layer/layer.js"></script>
     <script type="text/javascript">
         $(function() {

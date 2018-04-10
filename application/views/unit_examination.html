@@ -50,7 +50,7 @@
                         <div class="tit">统一考试</div>
                         <ul class="ul-category">
                             {{foreach from=$exam_list item=item}}
-                            <li>{{$item.title}}<input type="hidden" value="{{$item.id}}"></li>
+                            <li>{{$item.title}}<input type="hidden" value="{{$item.id}}">暂无试卷</li>
                             {{/foreach}}
                         </ul>
                         <a href="javascript:void(0);" id="save_btn" class="go-exam">开始考试</a>

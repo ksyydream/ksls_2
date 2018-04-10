@@ -70,11 +70,11 @@ body{background: #fff; font-family: "Microsoft YaHei";}p{white-space: normal; wo
     box-shadow:2px 2px 5px #9c9b9b;}
 .quanzheng .qz-con-tit{padding:15px 0; font-family: "Arial"; font-size: 30px;color: #bbb;border-bottom: 1px solid #ddd;}
 .quanzheng .user-login-div{padding:15px 52px 35px;}
-.user-login-div .login-input{font-size: 14px; padding:5px 10px;border: 1px solid #ddd;width:250px; height: 28px; line-height: 40px; background: none; border-radius: 3px;}
-.user-login-div .username,.user-login-div .userpwd{margin-top: 25px;}
-.user-login-div  label{width: 80px; display: inline-block; font-size: 14px; color:#aaa;}
-.user-login-div label em{width: 20px; height: 20px; float:left; margin-right: 5px;background: url(../images/l_user_icon.jpg) no-repeat;}
-.user-login-div label .em-pw{ background: url(../images/l_pwd_icon.jpg) no-repeat;}
+.quanzheng .user-login-div .login-input{font-size: 14px; padding:5px 10px;border: 1px solid #ddd;width:250px; height: 28px; line-height: 40px; background: none; border-radius: 3px;}
+.quanzheng .user-login-div .username,.quanzheng .user-login-div .userpwd{margin-top: 25px;}
+.quanzheng .user-login-div  label{width: 80px; display: inline-block; font-size: 14px; color:#aaa;}
+.quanzheng .user-login-div label em{width: 20px; height: 20px; float:left; margin-right: 5px;background: url(../images/l_user_icon.jpg) no-repeat;}
+.quanzheng .user-login-div label .em-pw{ background: url(../images/l_pwd_icon.jpg) no-repeat;}
 .qz-container {position: relative;}
 .qz-container .sub-div{ background: #f7f7f7; height: 43px;padding:16px 50px;}
 .qz-container .sub-div .loginBtn{width:108px; height: 40px; display: block; background: #2182c9;border-radius: 3px; float: right;

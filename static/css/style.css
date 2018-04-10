@@ -430,7 +430,7 @@ body{background: #fff; font-family: "Microsoft YaHei";}p{white-space: normal; wo
 
 
 .schedule-list .items .i-plan{color:#a9d86e;}.schedule-list .items .i-reality{color:#59ace2;}.schedule-list .items .i-review{color:#ff6c60;}
-.schedule-list li.score-plan,.schedule-list li.score-reality,.schedule-list li.score-review{ color:#fff;font-size:14px;}
+.schedule-list li.score-plan,.schedule-list li.score-reality,.schedule-list li.score-review{ color:#fff;font-size:12px;}
 .schedule-list li.score-plan{background:#a9d86e; text-align: center;}
 .dosth-list li.score-plan{text-align:left;}
 .dosth-list .history-show{ position: relative; cursor: pointer;}

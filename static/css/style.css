@@ -1116,7 +1116,7 @@ html .fc,.fc table{font-size:1em;background:#f2f3f5}.fc td,.fc th{padding:0;vert
 .px_login{width:420px; height: 380px;  float: right; margin-top: 80px; position: relative; }
 .px_login_bg{width:420px; height: 380px; background: #000; position: absolute; opacity: 0.6; z-index: 1;border-radius: 5px;}
 .px-form{position: absolute; z-index: 2;}
-.px_login .px_logo{margin:50px 0 40px 85px;}
+.px_login .px_logo{margin:50px 0 40px 5px;}
 .px_login .input-div{margin:0 0 20px 45px; background: #98c4e4; border-radius: 3px;padding:3px; width:325px; position: relative;}
 .px_login .username{ background: #fff; height: 40px;padding-left: 50px;width:275px;border:none; font-size: 14px; color:#666;}
 .px_login .input-btn{color:#fff; background:#98c4e4;width:331px;height: 46px; line-height: 46px; font-size: 16px; text-align: center; display: block;margin-left: 45px;border-radius: 3px;}

@@ -49,9 +49,13 @@
                     <div class="choose-exam-category">
                         <div class="tit">统一考试</div>
                         <ul class="ul-category">
+                            {{if $exam_list != -1}}
                             {{foreach from=$exam_list item=item}}
                             <li>{{$item.title}}<input type="hidden" value="{{$item.id}}"></li>
                             {{/foreach}}
+                            {{else}}
+                            <li> 暂无考试 </li>
+                            {{/if}}
                         </ul>
                         <a href="javascript:void(0);" id="save_btn" class="go-exam">开始考试</a>
                     </div>
